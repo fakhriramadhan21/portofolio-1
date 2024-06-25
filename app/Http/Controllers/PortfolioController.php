@@ -41,23 +41,22 @@ class PortfolioController extends Controller
             'nama'          => 'required|string',
             'jenis'       => 'required|string',
             'web'          => 'required|string',
-            'github'           => 'required|string',
+            'github'           => 'string|nullable',
             'deskripsi'   => 'required|string',
             'foto'         => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
+        $portfolio = new Portfolio;
+        $portfolio->name             = $attributes['nama'];
+        $portfolio->type             = $attributes['jenis'];
+        $portfolio->url              = $attributes['web'];
+        $portfolio->company_name           = $attributes['github'];
+        $portfolio->description      = $attributes['deskripsi'];
         if ($request->file('foto')) {
-            $ValidatedData['foto'] = $request->file('foto')->store('porto');
+            $ValidatedData['foto']  = $request->file('foto')->store('porto');
+            $portfolio->image       = $ValidatedData['foto'];
         }
-
-        Portfolio::create([
-            'nama'          => $attributes['nama'],
-            'jenis'  => $attributes['jenis'],
-            'web'          => $attributes['web'],
-            'github'           => $attributes['github'],
-            'deskripsi'   => $attributes['deskripsi'],
-            'foto'         => $ValidatedData['foto']
-        ]);
+        $portfolio->save();     
 
         return redirect()->route('portfolio.create')->with('success', 'Your data has been saved !');
     }
@@ -101,23 +100,22 @@ class PortfolioController extends Controller
             'nama'          => 'required|string',
             'jenis'       => 'required|string',
             'web'          => 'required|string',
-            'github'           => 'required|string',
+            'github'           => 'string|nullable',
             'deskripsi'   => 'required|string',
             'foto'         => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
+        $portfolio = new Portfolio;
+        $portfolio->name             = $attributes['nama'];
+        $portfolio->type             = $attributes['jenis'];
+        $portfolio->url              = $attributes['web'];
+        $portfolio->company_name           = $attributes['github'];
+        $portfolio->description      = $attributes['deskripsi'];
         if ($request->file('foto')) {
-            $ValidatedData['foto'] = $request->file('foto')->store('porto');
+            $ValidatedData['foto']  = $request->file('foto')->store('porto');
+            $portfolio->image       = $ValidatedData['foto'];
         }
-
-        $portfolio->update([
-            'nama'          => $attributes['nama'],
-            'jenis'  => $attributes['jenis'],
-            'web'          => $attributes['web'],
-            'github'           => $attributes['github'],
-            'deskripsi'   => $attributes['deskripsi'],
-            'foto'         => $ValidatedData['foto']
-        ]);
+        $portfolio->save();  
 
         return redirect()->route('portfolio.edit', $id)->with('success', 'Your data has been updated !');
     }

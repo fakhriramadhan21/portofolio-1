@@ -46,13 +46,12 @@ class EducationController extends Controller
             'deskripsi'   => 'required|string',
         ]);
 
-        Pendidikan::create([
-            'nama'          => $attributes['nama'],
-            'tahun'          => $attributes['tahun'],
-            'jurusan'         => $attributes['jurusan'],
-            'fakultas'   => $attributes['fakultas'],
-            'deskripsi'   => $attributes['deskripsi'],
-        ]);
+        $education = new Pendidikan;
+        $education->name = $attributes['nama'];
+        $education->year = $attributes['tahun'];
+        $education->major = $attributes['jurusan'];
+        $education->description = $attributes['deskripsi'];
+        $education->save();
 
         return redirect()->route('education.create')->with('success', 'Your data has been saved !');
     }
@@ -77,8 +76,9 @@ class EducationController extends Controller
     public function edit($id)
     {
         $pendidikan = Pendidikan::find($id);
+        $education = $pendidikan;
 
-        return view('admin.pages.education.edit', compact(['pendidikan']));
+        return view('admin.pages.education.edit', compact(['pendidikan','education']));
     }
 
     /**
@@ -97,13 +97,13 @@ class EducationController extends Controller
             'fakultas'   => 'required|string',
             'deskripsi'   => 'required|string',
         ]);
-        Pendidikan::where('id', $id)->update([
-            'nama'          => $attributes['nama'],
-            'tahun'          => $attributes['tahun'],
-            'jurusan'         => $attributes['jurusan'],
-            'fakultas'   => $attributes['fakultas'],
-            'deskripsi'   => $attributes['deskripsi'],
-        ]);
+
+        $education = Pendidikan::find($id);
+        $education->name = $attributes['nama'];
+        $education->year = $attributes['tahun'];
+        $education->major = $attributes['jurusan'];
+        $education->description = $attributes['deskripsi'];
+        $education->save();
 
         return redirect()->route('education.edit', $id)->with('success', 'Your data has been updated !');
     }

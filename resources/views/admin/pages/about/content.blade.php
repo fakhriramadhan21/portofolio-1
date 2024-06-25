@@ -38,10 +38,10 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group has-icon-left">
-                                    <label for="first-name-icon">Nama</label>
+                                    <label for="first-name-icon">Name</label>
                                     <div class="position-relative">
-                                        <input type="text" name="nama" class="form-control @error('nama') is-invalid @enderror" placeholder="Masukan Nama" id="first-name-icon" value="{{ $about->nama }}" />
-                                        @error('nama')
+                                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Enter Name" id="first-name-icon" value="{{ $about->name }}" />
+                                        @error('name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -54,10 +54,10 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-group has-icon-left">
-                                    <label for="email-id-icon">Alamat</label>
+                                    <label for="address-id-icon">Address</label>
                                     <div class="position-relative">
-                                        <input type="text" name="alamat" class="form-control @error('alamat') is-invalid @enderror" placeholder="Masukan Alamat" id="email-id-icon" value="{{ $about->alamat }}" />
-                                        @error('alamat')
+                                        <input type="text" name="address" class="form-control @error('address') is-invalid @enderror" placeholder="Enter Address" id="address-id-icon" value="{{ $about->address }}" />
+                                        @error('address')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -70,10 +70,10 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label for="email-id-icon">Umur</label>
+                                    <label for="age-id-icon">Age</label>
                                     <div class="position-relative">
-                                        <input type="text" name="umur" id="email-id-icon" class="form-control @error('umur') is-invalid @enderror" value="{{ $about->umur }}"></input>
-                                        @error('umur')
+                                        <input type="text" name="age" id="age-id-icon" class="form-control @error('age') is-invalid @enderror" value="{{ $about->age }}"></input>
+                                        @error('age')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -83,10 +83,10 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-group has-icon-left">
-                                    <label for="email-id-icon">Gelar</label>
+                                    <label for="degree-id-icon">Degree</label>
                                     <div class="position-relative">
-                                        <input type="text" name="gelar" class="form-control @error('gelar') is-invalid @enderror" placeholder="EMasukan Gelar" id="email-id-icon" value="{{ $about->gelar }}" />
-                                        @error('gelar')
+                                        <input type="text" name="degree" class="form-control @error('degree') is-invalid @enderror" placeholder="Enter Degree" id="degree-id-icon" value="{{ $about->degree }}" />
+                                        @error('degree')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -99,10 +99,10 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-group has-icon-left">
-                                    <label for="email-id-icon">Jurusan</label>
+                                    <label for="major-id-icon">Major</label>
                                     <div class="position-relative">
-                                        <input type="text" name="jurusan" class="form-control @error('jurusan') is-invalid @enderror" placeholder="Masukan Jurusan" id="email-id-icon" value="{{ $about->jurusan }}" />
-                                        @error('jurusan')
+                                        <input type="text" name="major" class="form-control @error('major') is-invalid @enderror" placeholder="Enter Major" id="major-id-icon" value="{{ $about->major }}" />
+                                        @error('major')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -117,7 +117,7 @@
                                 <div class="form-group has-icon-left">
                                     <label for="email-id-icon">Email</label>
                                     <div class="position-relative">
-                                        <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Masukan Email" id="email-id-icon" value="{{ $about->email }}" />
+                                        <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Enter Email" id="email-id-icon" value="{{ $about->email }}" />
                                         @error('email')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -131,9 +131,9 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-group has-icon-left">
-                                    <label for="email-id-icon">Status</label>
+                                    <label for="status-id-icon">Status</label>
                                     <div class="position-relative">
-                                        <input type="text" name="status" class="form-control @error('status') is-invalid @enderror" placeholder="Enter status" id="email-id-icon" value="{{ $about->status }}" />
+                                        <input type="text" name="status" class="form-control @error('status') is-invalid @enderror" placeholder="Enter Status" id="status-id-icon" value="{{ $about->status }}" />
                                         @error('status')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -147,10 +147,10 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label for="email-id-icon">Deskripsi</label>
+                                    <label for="description-id-icon">Description</label>
                                     <div class="position-relative">
-                                        <textarea name="deskripsi" id="email-id-icon" cols="30" rows="5" class="form-control @error('deskripsi') is-invalid @enderror">{{ $about->deskripsi }}</textarea>
-                                        @error('deskripsi')
+                                        <textarea name="description" id="description-id-icon" cols="30" rows="5" class="form-control @error('description') is-invalid @enderror">{{ $about->description }}</textarea>
+                                        @error('description')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -160,11 +160,11 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label for="email-id-icon">Foto</label>
+                                    <label for="photo-id-icon">Photo</label>
                                     <div class="position-relative">
-                                        <img src="{{ asset('storage/public'.$about->foto) }}" alt="image" class="img-thumbnail w-25 my-3" id="image">
-                                        <input name="foto" class="form-control @error('foto') is-invalid @enderror"  type="file" id="formFile" accept="foto/*" />
-                                        @error('foto')
+                                        <img src="{{ asset('storage/public'.$about->photo) }}" alt="image" class="img-thumbnail w-25 my-3" id="image">
+                                        <input name="photo" class="form-control @error('photo') is-invalid @enderror" type="file" id="formFile" accept="photo/*" />
+                                        @error('photo')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -173,9 +173,9 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="email-id-icon">CV</label>
+                                <label for="cv-id-icon">CV</label>
                                 <div class="position-relative">
-                                    <input name="cv" class="form-control @error('cv') is-invalid @enderror"  type="file" id="formFile" accept="cv/*" />
+                                    <input name="cv" class="form-control @error('cv') is-invalid @enderror" type="file" id="formFile" accept="cv/*" />
                                     @error('cv')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

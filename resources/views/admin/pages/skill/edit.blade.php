@@ -57,8 +57,8 @@
                                 <div class="form-group has-icon-left">
                                     <label for="first-name-icon">Nama</label>
                                     <div class="position-relative">
-                                        <input type="text" name="nama" class="form-control @error('nama') is-invalid @enderror" placeholder="Masukan Nama Skill" id="first-name-icon" value="{{ $skill->name }}" />
-                                        @error('nama')
+                                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Masukan Nama Skill" id="first-name-icon" value="{{ $skill->name }}" />
+                                        @error('name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -73,8 +73,8 @@
                                 <div class="form-group has-icon-left">
                                     <label for="email-id-icon">Deskripsi</label>
                                     <div class="position-relative">
-                                        <input type="text" name="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror" placeholder="Masukan Deskrpsi" id="email-id-icon" value="{{ $skill->deskripsi }}" />
-                                        @error('deskripsi')
+                                        <input type="text" name="percentage" class="form-control @error('percentage') is-invalid @enderror" placeholder="Masukan Deskrpsi" id="email-id-icon" value="{{ $skill->percentage }}" />
+                                        @error('percentage')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

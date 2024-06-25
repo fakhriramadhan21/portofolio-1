@@ -46,12 +46,12 @@ class AwardController extends Controller
             'icon'          => 'required|string',
         ]);
 
-        Penghargaan::create([
-            'name'          => $attributes['name'],
-            'description'   => $attributes['description'],
-            'url'           => $attributes['url'],
-            'icon'          => $attributes['icon'],
-        ]);
+        $penghargaan = new Penghargaan;
+        $penghargaan->name          = $attributes['name'];
+        $penghargaan->description   = $attributes['description'];
+        $penghargaan->url           = $attributes['url'];
+        $penghargaan->icon          = $attributes['icon'];
+        $penghargaan->save();
 
         return redirect()->route('award.create')->with('success', 'Your data has been saved !');
     }

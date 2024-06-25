@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Portfolio extends Model
 {
     use HasFactory;
-    protected $table = "portofolio";
+    protected $table = "portfolios";
     protected $fillable = [
         'nama',
         'jenis',

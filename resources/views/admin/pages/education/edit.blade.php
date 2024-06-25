@@ -55,10 +55,10 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group has-icon-left">
-                                    <label for="first-name-icon">Nama</label>
+                                    <label for="institution-name-icon">Institution Name</label>
                                     <div class="position-relative">
-                                        <input type="text" name="nama" class="form-control @error('nama') is-invalid @enderror" placeholder="Masukan Nama Instansi" id="first-name-icon" />
-                                        @error('nama')
+                                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Enter Institution Name" id="institution-name-icon" value="{{ $education->name }}"/>
+                                        @error('name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -71,9 +71,9 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-group has-icon-left">
-                                    <label for="email-id-icon">Tahun</label>
+                                    <label for="year-id-icon">Year</label>
                                     <div class="position-relative">
-                                        <input type="text" name="tahun" class="form-control @error('tahun') is-invalid @enderror" placeholder="Masukan Tahun Studi (etc: 2015-2018)" id="email-id-icon" />
+                                        <input type="text" name="year" class="form-control @error('year') is-invalid @enderror" placeholder="Enter Study Year (e.g., 2015-2018)" id="year-id-icon" value="{{ $education->year }}"/>
                                         @error('year')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -87,10 +87,10 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-group has-icon-left">
-                                    <label for="email-id-icon">Jurusan</label>
+                                    <label for="major-id-icon">Major</label>
                                     <div class="position-relative">
-                                        <input type="text" name="jurusan" class="form-control @error('jurusan') is-invalid @enderror" placeholder="Masukan Jurusan" id="email-id-icon" />
-                                        @error('jurusan')
+                                        <input type="text" name="major" class="form-control @error('major') is-invalid @enderror" placeholder="Enter Major" id="major-id-icon" value="{{ $education->major }}"/>
+                                        @error('major')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -103,10 +103,10 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label for="email-id-icon">Fakultas</label>
+                                    <label for="faculty-id-icon">Faculty</label>
                                     <div class="position-relative">
-                                        <input type="text" name="fakultas" class="form-control @error('fakultas') is-invalid @enderror" placeholder="Masukan Fakultas" />
-                                        @error('fakultas')
+                                        <input type="text" name="faculty" class="form-control @error('faculty') is-invalid @enderror" placeholder="Enter Faculty" value="{{ $education->faculty }}"/>
+                                        @error('faculty')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -116,10 +116,10 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label for="email-id-icon">Deskripsi</label>
+                                    <label for="description-id-icon">Description</label>
                                     <div class="position-relative">
-                                        <textarea name="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror" cols="30" rows="10"></textarea>
-                                        @error('deskripsi')
+                                        <textarea name="description" class="form-control @error('description') is-invalid @enderror" cols="30" rows="10">{{ $education->description }}</textarea>
+                                        @error('description')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

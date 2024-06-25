@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Syarif Syarifuddin - Portofolio</title>
+    <title>Fakhri Ramadhan - Portofolio</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- @TODO: replace SET_YOUR_CLIENT_KEY_HERE with your client key -->

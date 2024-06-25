@@ -8,6 +8,9 @@ use App\Models\Pengalaman;
 use App\Models\Penghargaan;
 use App\Models\Portfolio;
 use App\Models\User;
+
+use App\Models\Skill;
+
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 
@@ -34,7 +37,7 @@ class DashboardController extends Controller
         $response = $client->get('https://api.github.com/users/soden46/repos');
         $datarepos = json_decode($response->getBody());
 
-        $skill = Keahlian::all()->count();
+        $skill = Skill::all()->count();
         $experience = Pengalaman::all()->count();
         $portfolio = Portfolio::all()->count();
         $award = Penghargaan::all()->count();

@@ -34,16 +34,16 @@ class AboutController extends Controller
     {
         $about = Tentang::find($id);
         $ValidatedData = $request->validate([
-            'nama' => ['required', 'max:255'],
-            'alamat' => ['required', 'max:255'],
-            'umur' => ['required', 'max:255'],
-            'gelar' => ['required', 'max:255'],
-            'jurusan' => ['required', 'max:255'],
-            'email' => ['required', 'max:255'],
-            'status' => ['required', 'max:255'],
-            'deskripsi' => ['required', 'max:255'],
-            'foto' => ['mimes:jpg,jpeg,png', 'max:5048'],
-            'cv' => ['mimes:pdf,PDF,doc,docx,DOCX,DOC', 'max:5048'],
+            // 'nama' => ['required', 'max:255'],
+            // 'alamat' => ['required', 'max:255'],
+            // 'umur' => ['required', 'max:255'],
+            // 'gelar' => ['required', 'max:255'],
+            // 'jurusan' => ['required', 'max:255'],
+            // 'email' => ['required', 'max:255'],
+            // 'status' => ['required', 'max:255'],
+            // 'deskripsi' => ['required', 'max:255'],
+            // 'foto' => ['mimes:jpg,jpeg,png', 'max:5048'],
+            // 'cv' => ['mimes:pdf,PDF,doc,docx,DOCX,DOC', 'max:5048'],
         ]);
 
         if ($request->file('foto')) {
@@ -53,6 +53,8 @@ class AboutController extends Controller
         if ($request->file('cv')) {
             $ValidatedData['cv'] = $request->file('cv')->store('about');
         }
+        // dd($ValidatedData['cv']);
+
         $about->update($ValidatedData);
 
         return redirect()->route('about.index')->with('success', 'Your data has been updated !');

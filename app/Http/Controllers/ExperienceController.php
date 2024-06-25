@@ -45,12 +45,12 @@ class ExperienceController extends Controller
             'description'   => 'required',
         ]);
 
-        Pengalaman::create([
-            'company'       => $attributes['company'],
-            'position'      => $attributes['position'],
-            'date'          => $attributes['date'],
-            'description'   => $attributes['description'],
-        ]);
+        $experience = new Pengalaman;
+        $experience->company        = $attributes['company'];
+        $experience->position       = $attributes['position'];
+        $experience->date           = $attributes['date'];
+        $experience->description    = $attributes['description'];
+        $experience->save();
 
         return redirect()->route('experience.create')->with('success', 'Your data has been saved !');
     }

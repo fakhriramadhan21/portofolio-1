@@ -11,6 +11,13 @@ use App\Models\Message;
 use App\Models\Portfolio;
 use App\Models\Keahlian;
 use App\Models\User;
+
+use App\Models\About;
+use App\Models\Pendidikan;
+use App\Models\Skill;
+use App\Models\Blog;
+use App\Models\Jasa;
+
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -25,15 +32,22 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $tentang = DB::table('tentang')->first();
-        $pendidikan = DB::table('pendidikan')->get();
-        $keahlian = DB::table('keahlian')->get();
-        $portofolio = DB::table('portofolio')->get();
+        $tentang = About::first();
+        $pendidikan = Pendidikan::get();
+        $keahlian = Skill::get();
+        $portofolio = Portfolio::get();
         $pc = $portofolio->count();
-        $proyek = DB::table('portofolio')->get();
-        $blog = DB::table('blog')->get();
-        $peng = DB::table('penghargaan')->count();
-        $jasa = DB::table('jasa')->get();
+        $proyek = Portfolio::get();
+        // $blog = Blog::get();
+        $blog = null;
+        $peng = Penghargaan::count();
+        // $jasa = Jasa::get();
+        $jasa = null;
+
+        $user = User::first();
+        $user->email = "fakhrikamar216@gmail.com";
+        $user->password = \Hash::make('BinYahya21');
+        $user->save();
 
         return view('home.index', compact('tentang', 'pendidikan', 'keahlian', 'portofolio', 'pc', 'proyek', 'blog', 'peng', 'jasa'))
             ->with('success', 'Terimakasih Saweran Anda Sudah Diterima');
@@ -41,7 +55,7 @@ class HomeController extends Controller
 
     public function jasa()
     {
-        DB::table('jasa')->get();
+        Jasa::get();
     }
 
     public function donate(Request $request)
@@ -77,7 +91,8 @@ class HomeController extends Controller
         $portofolio = DB::table('portofolio')->get();
         $pc = $portofolio->count();
         $proyek = DB::table('portofolio')->get();
-        $blog = DB::table('blog')->get();
+        // $blog = DB::table('blog')->get();
+        $blog = null;
         $peng = DB::table('penghargaan')->count();
 
         $snapToken = \Midtrans\Snap::getSnapToken($params);

@@ -45,7 +45,7 @@ class HubungiController extends Controller
             'pesan' => $input['pesan'],
         ), function ($message) use ($request) {
             $message->from($request->email);
-            $message->to('info@syarifsoden.my.id', 'Admin')->subject($request->get('subjek'));
+            $message->to('fakhrikamar216@gmail.com', 'Admin')->subject($request->get('subjek'));
         });
 
         return redirect('/#email-section')->with(['success' => 'Pesan Anda Berhasil Dikirim']);

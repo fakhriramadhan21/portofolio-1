@@ -11,8 +11,8 @@
 					</div>
 					<div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
 						<div class="text">
-							<span class="subheading">Halo!</span>
-							<h1 class="mb-4 mt-3"> Nama Saya <span>Syarif Syarifuddin</span></h1>
+							<span class="subheading">Hello!</span>
+							<h1 class="mb-4 mt-3"> I'm <span>Fakhri Ramadhan</span></h1>
 							<h2 class="mb-4">Web Developer</h2>
 							<div class="badge bg-gradient-primary-to-secondary text-white mb-4">
 								<div class="text-uppercase">PHP · Laravel · Hosting . MYSQL</div>
@@ -160,16 +160,16 @@
 			<div class="col-md-6 col-lg-7 pl-lg-5">
 				<div class="row justify-content-start">
 					<div class="col-md-12 heading-section ftco-animate">
-						<h1 class="big">Tentang</h1>
-						<h2 class="mb-4">Tentang Saya</h2>
+						<h1 class="big">About</h1>
+						<h2 class="mb-4">About Me</h2>
 						<p></p>
 						<ul class="about-info px-md-0 px-2">
-							<li class="d-flex"><span>Nama:</span> <span>{{$tentang->nama}}</span></li>
-							<li class="d-flex"><span>Umur:</span> <span>{{$tentang->umur}}</span></li>
-							<li class="d-flex"><span>Alamat:</span> <span>{{$tentang->alamat}}</span></li>
+							<li class="d-flex"><span>Name:</span> <span>{{$tentang->name}}</span></li>
+							<li class="d-flex"><span>Age:</span> <span>{{$tentang->age}}</span></li>
+							<li class="d-flex"><span>Address:</span> <span>{{$tentang->address}}</span></li>
 							<li class="d-flex"><span>Email:</span> <span>{{$tentang->email}}</span></li>
 							<li class="d-flex"><span>Status:</span> <span>{{$tentang->status}}</span></li>
-							<li class="d-flex"><span>Deskripsi:</span> <span>{{$tentang->deskripsi}}</span></li>
+							<li class="d-flex"><span>Description:</span> <span>{{$tentang->description}}</span></li>
 						</ul>
 					</div>
 				</div>
@@ -182,27 +182,18 @@
 	<div class="container">
 		<div class="row justify-content-center pb-5">
 			<div class="col-md-10 heading-section text-center ftco-animate">
-				<h1 class="big big-2">Pendidikan</h1>
-				<h2 class="mb-4">Pendidikan</h2>
+				<h1 class="big big-2">Education</h1>
+				<h2 class="mb-4">Education</h2>
 			</div>
 		</div>
 		<div class="row">
 			@foreach($pendidikan as $pend)
 			<div class="col-md-3 mb-3">
 				<div class="card">
-					@if($pend->nama=="Universitas Teknologi Yogyakarta")
-					<div class="text-center">
-						<img class="card-img-top justify-content-center" src="{{asset('assets/foto/uty.png')}}" alt="Card image cap">
-					</div>
-					@elseif($pend->nama=="SMK Negeri 3 Metro")
-					<div class="text-center">
-						<img class="card-img-top justify-content-center" src="{{asset('assets/foto/smk3.png')}}" style="height: 57px; width:253px" alt="Card image cap">
-					</div>
-					@endif
 					<small class="text-muted d-flex justify-content-center">{{$pend->tahun}}</small>
 					<div class="card-body">
-						<h5 class="card-title">{{$pend->nama}}</h5>
-						<p class="card-text">{{$pend->jurusan}}</p>
+						<h5 class="card-title">{{$pend->name}}</h5>
+						<p class="card-text">{{$pend->major}}</p>
 					</div>
 				</div>
 			</div>
@@ -220,8 +211,8 @@
 	<div class="container">
 		<div class="row justify-content-center pb-2">
 			<div class="col-md-12 heading-section text-center ftco-animate">
-				<h1 class="big big-2">Keahlian</h1>
-				<h2 class="mb-4">Keahlian</h2>
+				<h1 class="big big-2">Skills</h1>
+				<h2 class="mb-4">Skills</h2>
 			</div>
 		</div>
 
@@ -248,22 +239,22 @@
 	<div class="container">
 		<div class="row justify-content-center pb-2">
 			<div class="col-md-12 heading-section text-center ftco-animate">
-				<h1 class="big big-2">Proyek</h1>
-				<h2 class="mb-4">Proyek</h2>
+				<h1 class="big big-2">Project</h1>
+				<h2 class="mb-4">Project</h2>
 			</div>
 		</div>
 		<div class="row ">
 			@foreach($proyek as $project)
 			<div class="col-md-4 d-flex ftco-animate">
 				<div class="card">
-					<img class="card-img-top" src="{{asset('storage/public/'.$project->foto)}}" alt="Card image cap">
-					<small class="text-muted text-center">{{$project->jenis}} </small>
+					<img class="card-img-top" src="{{ asset('storage/'.$project->image) }}" alt="Card image cap">
+					<small class="text-muted text-center">{{$project->type}} </small>
 					<div class="card-body">
-						<h5 class="card-title">{{$project->nama}}</h5>
-						<p class="card-text">{!!$project->deskripsi!!}</p>
+						<h5 class="card-title">{{$project->name}}</h5>
+						<p class="card-text">{!!$project->description!!}</p>
 					</div>
 					<div class="card-footer text-center">
-						<a href="{{$project->web}}" class="btn btn-success text-center" target="_blank">Lihat</a> <a href="{{$project->github}}" class="btn btn-primary text-center" target="_blank">Github</a>
+						<a href="{{$project->url}}" class="btn btn-success text-center" target="_blank">See</a>
 					</div>
 				</div>
 			</div>
@@ -272,45 +263,13 @@
 	</div>
 </section>
 
-<section class="ftco-section" id="blog-section">
-	<div class="container">
-		<div class="row justify-content-center mb-2">
-			<div class="col-md-7 heading-section text-center ftco-animate">
-				<h1 class="big big-2">Blog</h1>
-				<h2 class="mb-4">Blog</h2>
-			</div>
-		</div>
-
-		<div class="row">
-			@forelse($blog as $post)
-			<div class="col-md-4 d-flex ftco-animate">
-				<div class="card">
-					<img class="card-img-top" src="{{asset('storage/public/'.$post->foto)}}" alt="Card image cap">
-					<small class="text-muted">{{$post->updated_at}} </small>
-					<div class="card-body">
-						<h5 class="card-title">{{$post->judul}}</h5>
-						<p class="card-text">{{$post->kutipan}}</p>
-					</div>
-					<div class="card-footer">
-						<a href="#" class="btn btn-success">Selengkapnya</a>
-					</div>
-				</div>
-				@empty
-				<div class="justify-content-center ftco-animate typewriter">
-					<h2 class="mb-4 justify-content-center">Belum Ada Postingan...</h2>
-				</div>
-				@endforelse
-			</div>
-		</div>
-</section>
-
 <section class="ftco-section" id="jasa">
 	<div class="container">
 		<div class="row justify-content-center py-5 mt-2">
 			<div class="col-md-12 heading-section text-center ftco-animate">
-				<h1 class="big big-2">Jasa Webdev</h1>
-				<h2 class="mb-4">Jasa</h2>
-				<p>Melayani Jasa Pembuatan Website Skripsi SI/TI & Company Profile</p>
+				<h1 class="big big-2">Services</h1>
+				<h2 class="mb-4">Services</h2>
+				<!-- <p>Melayani Jasa Pembuatan Website Skripsi SI/TI & Company Profile</p> -->
 			</div>
 		</div>
 		<div class="row justify-content-center">
@@ -345,7 +304,7 @@
 				<div class="block-18 col-lg-4">
 					<div class="text">
 						<strong class="number" data-number="{!!$pc!!}">0</strong>
-						<span>Proyek Diselesaikan</span>
+						<span>Project Finished</span>
 					</div>
 				</div>
 			</div>
@@ -358,7 +317,7 @@
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-7 ftco-animate text-center">
-				<h2>Saya Siap Bekerja Full Time/Part Time Sebagai Web Developer</h2>
+				<h2>I am Ready to Work Full Time/Part Time As a Web Developer</h2>
 				<p class="mb-0"><a href="#contact-section" class="btn btn-primary py-3 px-5">Rekrut Saya</a></p>
 			</div>
 		</div>
@@ -369,8 +328,8 @@
 	<div class="container">
 		<div class="row justify-content-center mb-2 pb-3">
 			<div class="col-md-7 heading-section text-center ftco-animate">
-				<h1 class="big big-2">Kontak</h1>
-				<h2 class="mb-4">Kontak Saya</h2>
+				<h1 class="big big-2">Contact</h1>
+				<h2 class="mb-4">My Contact</h2>
 			</div>
 		</div>
 
@@ -380,8 +339,8 @@
 					<div class="icon d-flex align-items-center justify-content-center">
 						<span class="icon-map-signs"></span>
 					</div>
-					<h3 class="mb-4">Alamat</h3>
-					<p>{{$tentang->alamat}}</p>
+					<h3 class="mb-4">Address</h3>
+					<p>{{$tentang->address}}</p>
 				</div>
 			</div>
 			<div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -389,8 +348,8 @@
 					<div class="icon d-flex align-items-center justify-content-center">
 						<span class="icon-phone2"></span>
 					</div>
-					<h3 class="mb-4">Kontak</h3>
-					<p><a href="tel:">{{$tentang->no_hp}}</a></p>
+					<h3 class="mb-4">Contact</h3>
+					<p><a href="https://wa.me/62822148822149/?text=Hello">(WA) 082148822149</a></p>
 				</div>
 			</div>
 			<div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -409,11 +368,12 @@
 						<span class="icon-globe"></span>
 					</div>
 					<h3 class="mb-4">Website</h3>
-					<p><a href="#">syarifsoden.my.id</a></p>
+					<p><a href="{{ env('APP_URL')}}">{{ env('APP_URL')}}</a></p>
 				</div>
 			</div>
 		</div>
 
+		{{--
 		<div class="row no-gutters block-9 email-section" id="email-section">
 			<div class="col-md-6 order-md-last d-flex">
 				<form action="{{route('kirim-pesan')}}" method="post" class="bg-ctf p-4 p-md-5 contact-form">
@@ -447,6 +407,7 @@
 				<div class="img" style="background-image: url(images/about.jpg);"></div>
 			</div>
 		</div>
+		--}}
 	</div>
 </section>
 @endsection

@@ -74,7 +74,7 @@
                                 <div class="form-group has-icon-left">
                                     <label for="email-id-icon">Jenis Proyek</label>
                                     <div class="position-relative">
-                                        <input type="text" name="jenis" class="form-control @error('jenis') is-invalid @enderror" placeholder="Masukan Jenis Proyek" id="email-id-icon" value="{{ $portfolio->jenis }}" />
+                                        <input type="text" name="jenis" class="form-control @error('jenis') is-invalid @enderror" placeholder="Masukan Jenis Proyek" id="email-id-icon" value="{{ $portfolio->type }}" />
                                         @error('jenis')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -90,7 +90,7 @@
                                 <div class="form-group has-icon-left">
                                     <label for="email-id-icon">URL Proyek</label>
                                     <div class="position-relative">
-                                        <input type="text" name="web" class="form-control @error('web') is-invalid @enderror" placeholder="Masukan URL Proyek" id="email-id-icon" value="{{ $portfolio->web }}" />
+                                        <input type="text" name="web" class="form-control @error('web') is-invalid @enderror" placeholder="Masukan URL Proyek" id="email-id-icon" value="{{ $portfolio->url }}" />
                                         @error('web')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -106,7 +106,7 @@
                                 <div class="form-group has-icon-left">
                                     <label for="email-id-icon">URL Github</label>
                                     <div class="position-relative">
-                                        <input type="text" name="github" class="form-control @error('github') is-invalid @enderror" placeholder="Masukan URL Github" id="email-id-icon" value="{{ $portfolio->github }}" />
+                                        <input type="text" name="github" class="form-control @error('github') is-invalid @enderror" placeholder="Masukan URL Github" id="email-id-icon" value="{{ $portfolio->company_name }}" />
                                         @error('github')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -122,7 +122,7 @@
                                 <div class="form-group">
                                     <label for="email-id-icon">Deskripsi Proyek</label>
                                     <div class="position-relative">
-                                        <textarea name="deskripsi" id="email-id-icon" cols="30" rows="10" class="form-control @error('deskripsi') is-invalid @enderror">{{ $portfolio->deskripsi }}</textarea>
+                                        <textarea name="deskripsi" id="email-id-icon" cols="30" rows="10" class="form-control @error('deskripsi') is-invalid @enderror">{{ $portfolio->description }}</textarea>
                                         @error('deskripsi')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -135,7 +135,7 @@
                                 <div class="form-group">
                                     <label for="email-id-icon">Foto Proyek</label>
                                     <div class="position-relative">
-                                        <img src="{{ asset('assets/foto'.$portfolio->foto) }}" alt="image" class="img-thumbnail w-25 my-3">
+                                        <img src="{{ asset('assets/foto'.$portfolio->image) }}" alt="image" class="img-thumbnail w-25 my-3">
                                         <input name="foto" class="form-control @error('foto') is-invalid @enderror" type="file" id="formFile" accept="image/*" />
                                         @error('foto')
                                         <span class="invalid-feedback" role="alert">

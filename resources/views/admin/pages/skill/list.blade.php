@@ -46,8 +46,8 @@
                     @foreach ($skill as $key => $data)
                     <tr>
                         <td>{{ $key + 1 }}</td>
-                        <td>{{ $data->nama }}</td>
-                        <td>{{ $data->deskripsi }}%</td>
+                        <td>{{ $data->name }}</td>
+                        <td>{{ $data->percentage }}%</td>
                         <td>
                             <a class="btn btn-outline-info btn-block mb-2" href="{{ route('skill.edit', $data->id) }}">Edit</a>
                             <form action="{{ route('skill.destroy', $data->id) }}" method="post">

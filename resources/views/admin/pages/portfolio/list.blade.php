@@ -50,12 +50,12 @@
                     @foreach ($portfolio as $key => $data)
                     <tr>
                         <td>{{ $key + 1 }}</td>
-                        <td>{{ $data->nama }}</td>
-                        <td>{{ $data->jenis }}</td>
-                        <td>{{ $data->web }}</td>
-                        <td>{{ $data->github }}</td>
-                        <td>{{ Str::limit($data->deskripsi,50) }}</td>
-                        <td><img src="{{ asset('storage/'.$data->foto) }}" alt="image" class="img-thumbnail"></td>
+                        <td>{{ $data->name }}</td>
+                        <td>{{ $data->type }}</td>
+                        <td>{{ $data->url }}</td>
+                        <td>{{ $data->company_name }}</td>
+                        <td>{{ Str::limit($data->description,50) }}</td>
+                        <td><img src="{{ asset('storage/'.$data->image) }}" alt="image" class="img-thumbnail"></td>
                         <td>
                             <a class="btn btn-outline-info btn-block mb-2" href="{{ route('portfolio.edit', $data->id) }}">Edit</a>
                             <form action="{{ route('portfolio.destroy', $data->id) }}" method="post">

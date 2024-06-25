@@ -82,7 +82,7 @@
                         <span>Award</span>
                     </a>
                 </li>
-
+                {{--
                 <li class="sidebar-item {{ Request::is('blog') ? 'active' : '' }}">
                     <a href="{{ route('blog.index') }}" class="sidebar-link">
                         <i class="fa-solid fa-blog "></i>
@@ -96,6 +96,7 @@
                         <span>Jasa</span>
                     </a>
                 </li>
+                --}}
 
                 {{-- <li class="sidebar-item has-sub">
                     <a href="#" class="sidebar-link">

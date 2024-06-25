@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Tentang extends Model
 {
     use HasFactory;
-    protected $table = "tentang";
+    protected $table = "abouts";
     protected $fillable = [
         'nama',
         'alamat',

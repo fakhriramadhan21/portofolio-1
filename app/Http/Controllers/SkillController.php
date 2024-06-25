@@ -39,14 +39,14 @@ class SkillController extends Controller
     public function store(Request $request)
     {
         $attributes = $request->validate([
-            'nama'          => 'required|string',
-            'deskripsi'    => 'required|string',
+            'name'          => 'required|string',
+            'percentage'    => 'required|string',
         ]);
 
-        Keahlian::create([
-            'nama'          => $attributes['nama'],
-            'deskripsi'    => $attributes['deskripsi'],
-        ]);
+        $skill = new Keahlian;
+        $skill->name = $attributes['name'];
+        $skill->percentage = $attributes['percentage'];
+        $skill->save();
 
         return redirect()->route('skill.create')->with('success', 'Your data has been saved !');
     }

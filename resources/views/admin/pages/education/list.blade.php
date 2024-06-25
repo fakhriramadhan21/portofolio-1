@@ -48,11 +48,11 @@
                     @foreach ($pendidikan as $key => $data)
                     <tr>
                         <td>{{ $key + 1 }}</td>
-                        <td>{{ $data->nama }}</td>
-                        <td>{{ $data->tahun }}</td>
-                        <td>{{ $data->jurusan }}</td>
-                        <td>{{ $data->fakutas }}</td>
-                        <td>{{ $data->deskripsi }}</td>
+                        <td>{{ $data->name }}</td>
+                        <td>{{ $data->year }}</td>
+                        <td>{{ $data->major }}</td>
+                        <td>{{ $data->faculty }}</td>
+                        <td>{{ $data->description }}</td>
                         <td>
                             <a class="btn btn-outline-info btn-block mb-2" href="{{ route('education.edit', $data->id) }}">Edit</a>
                             <form action="{{ route('education.destroy', $data->id) }}" method="post">
